@@ -1,5 +1,5 @@
 blinker==1.4
-certifi==2015.4.28
+certifi==2015.9.6.2
 chardet==2.3.0
 cssselect==0.9.1
 Flask==0.10.1
@@ -11,10 +11,10 @@ MarkupSafe==0.23
 pyquery==1.2.9
 python-dateutil==2.4.2
 pytz==2015.4
-raven==5.5.0
+raven==5.7.0
 requests==2.7.0
 simplejson==3.8.0
 six==1.9.0
-Twisted==15.2.1
+Twisted==15.4.0
 Werkzeug==0.10.4
 zope.interface==4.1.2

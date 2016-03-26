@@ -11,7 +11,7 @@ MarkupSafe==0.23
 pyquery==1.2.11
 python-dateutil==2.5.1
 pytz==2016.3
-raven==5.11.1
+raven==5.11.2
 requests==2.9.1
 simplejson==3.8.2
 six==1.10.0

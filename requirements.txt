@@ -15,6 +15,6 @@ raven==5.24.3
 requests==2.11.1
 simplejson==3.8.2
 six==1.10.0
-Twisted==16.3.1
+Twisted==16.3.2
 Werkzeug==0.11.10
 zope.interface==4.2.0

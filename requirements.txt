@@ -8,7 +8,7 @@ itsdangerous==0.24
 Jinja2==2.8
 lxml==3.6.4
 MarkupSafe==0.23
-pyquery==1.2.16
+pyquery==1.2.17
 python-dateutil==2.5.3
 pytz==2016.7
 raven==5.27.1

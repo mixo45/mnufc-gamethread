@@ -21,151 +21,102 @@ app = Flask(__name__)
 
 
 Division = namedtuple("Division", ["name", "teams"])
-Team = namedtuple("Team", ["name", "shortcode", "subreddit", "espn_url"])
+Team = namedtuple("Team", ["name", "mls_code", "shortcode", "subreddit", "espn_url"])
 
 DIVISIONS = [
-    Division("Atlantic", [
+    Division("West", [
         Team(
-            "Boston Celtics", "BOS", "bostonceltics",
-            "http://espn.go.com/nba/team/_/name/bos/boston-celtics",
+            "Colorado Rapids", "colorado-rapids", "COL", "rapids",
+            "http://www.espnfc.us/club/colorado-rapids/184/index",
         ),
         Team(
-            "Brooklyn Nets", "BKN", "GoNets",
-            "http://espn.go.com/nba/team/_/name/bkn/brooklyn-nets",
+            "FC Dallas", "fc-dallas", "DAL", "FCDallas",
+            "http://www.espnfc.com/club/fc-dallas/185/index",
         ),
         Team(
-            "New York Knicks", "NYK", "NYKnicks",
+            "Houston Dynamo", "houston-dynamo", "HOU", "dynamo",
             "http://espn.go.com/nba/team/_/name/ny/new-york-knicks",
         ),
         Team(
-            "Philadelphia 76ers", "PHI", "sixers",
-            "http://espn.go.com/nba/team/_/name/phi/philadelphia-76ers",
+            "LA Galaxy", "la-galaxy", "LA", "LAGalaxy",
+            "http://www.espnfc.com/club/la-galaxy/187/index",
         ),
         Team(
-            "Toronto Raptors", "TOR", "torontoraptors",
-            "http://espn.go.com/nba/team/_/name/tor/toronto-raptors"
-        ),
-    ]),
-    Division("Central", [
-        Team(
-            "Chicago Bulls", "CHI", "chicagobulls",
-            "http://espn.go.com/nba/team/_/name/chi/chicago-bulls"
+            "Minnesota United FC", "minnesota-united-fc", "MNU", "minnesotaunited",
+            "http://www.espnfc.com/club/minnesota-united-fc/17362/index"
         ),
         Team(
-            "Cleveland Cavaliers", "CLE", "clevelandcavs",
-            "http://espn.go.com/nba/team/_/name/cle/cleveland-cavaliers"
+            "Portland Timbers", "portland-timbers", "POR", "timbers",
+            "http://www.espnfc.com/club/portland-timbers/9723/index"
         ),
         Team(
-            "Detroit Pistons", "DET", "DetroitPistons",
-            "http://espn.go.com/nba/team/_/name/det/detroit-pistons"
+            "Real Salt Lake", "real-salt-lake", "RSL", "realsaltlake",
+            "http://www.espnfc.com/club/real-salt-lake/4771/index"
         ),
         Team(
-            "Indiana Pacers", "IND", "pacers",
-            "http://espn.go.com/nba/team/_/name/ind/indiana-pacers"
+            "San Jose Earthquakes", "san-jose-earthquakes", "SJ", "SJEarthquakes",
+            "http://www.espnfc.com/club/san-jose-earthquakes/191/index"
         ),
         Team(
-            "Milwaukee Bucks", "MIL", "mkebucks",
-            "http://espn.go.com/nba/team/_/name/mil/milwaukee-bucks"
-        ),
-    ]),
-    Division("Southeast", [
-        Team(
-            "Atlanta Hawks", "ATL", "AtlantaHawks",
-            "http://espn.go.com/nba/team/_/name/atl/atlanta-hawks"
+            "Seattle Sounders FC", "seattle-sounders-fc", "SEA", "SoundersFC",
+            "http://www.espnfc.com/club/seattle-sounders-fc/9726/index"
         ),
         Team(
-            "Charlotte Hornets", "CHA", "CharlotteHornets",
-            "http://espn.go.com/nba/team/_/name/cha/charlotte-bobcats"
+            "Sporting Kansas City", "sporting-kansas-city", "SKC", "sportingkc",
+            "http://www.espnfc.com/club/sporting-kansas-city/186/index"
         ),
         Team(
-            "Miami Heat", "MIA", "heat",
-            "http://espn.go.com/nba/team/_/name/mia/miami-heat"
-        ),
-        Team(
-            "Orlando Magic", "ORL", "orlandomagic",
-            "http://espn.go.com/nba/team/_/name/orl/orlando-magic"
-        ),
-        Team(
-            "Washington Wizards", "WAS", "washingtonwizards",
-            "http://espn.go.com/nba/team/_/name/wsh/washington-wizards"
+            "Vancouver Whitecaps FC", "vancouver-whitecaps-fc", "VAN", "mkebucks",
+            "http://www.espnfc.com/club/vancouver-whitecaps/9727/index"
         ),
     ]),
-    Division("Pacific", [
+    Division("East", [
         Team(
-            "Golden State Warriors", "GSW", "warriors",
-            "http://espn.go.com/nba/team/_/name/gs/golden-state-warriors"
+            "Atlanta United FC", "atlanta-united-fc", "ATL", "AtlantaUnited",
+            "http://www.espnfc.com/club/atlanta-united-fc/17362/index"
         ),
         Team(
-            "Los Angeles Clippers", "LAC", "LAClippers",
-            "http://espn.go.com/nba/team/_/name/lac/los-angeles-clippers"
+            "Chicago Fire", "chicago-fire", "CHI", "chicagofire",
+            "http://www.espnfc.com/club/chicago-fire/182/index"
         ),
         Team(
-            "Los Angeles Lakers", "LAL", "lakers",
-            "http://espn.go.com/nba/team/_/name/lal/los-angeles-lakers"
+            "Columbus Crew SC", "columbus-crew-sc", "CLB", "TheMassive",
+            "http://www.espnfc.com/club/columbus-crew-sc/183/index"
         ),
         Team(
-            "Phoenix Suns", "PHX", "SUNS",
-            "http://espn.go.com/nba/team/_/name/phx/phoenix-suns"
+            "D.C. United", "dc-united", "DC", "DCUnited",
+            "http://www.espnfc.com/club/dc-united/193/index"
         ),
         Team(
-            "Sacramento Kings", "SAC", "kings",
-            "http://espn.go.com/nba/team/_/name/sac/sacramento-kings"
-        ),
-    ]),
-    Division("Southwest", [
-        Team(
-            "Dallas Mavericks", "DAL", "Mavericks",
-            "http://espn.go.com/nba/team/_/name/dal/dallas-mavericks"
+            "Montreal Impact", "montreal-impact", "MTL", "montrealimpact",
+            "http://www.espnfc.com/club/montreal-impact/9720/index"
         ),
         Team(
-            "Houston Rockets", "HOU", "rockets",
-            "http://espn.go.com/nba/team/_/name/hou/houston-rockets"
+            "New England Revolution", "new-england-revolution", "NE", "NewEnglandRevolution",
+            "http://www.espnfc.com/club/new-england-revolution/189/index"
         ),
         Team(
-            "Memphis Grizzlies", "MEM", "memphisgrizzlies",
-            "http://espn.go.com/nba/team/_/name/mem/memphis-grizzlies"
+            "New York City FC", "new-york-city-fc", "NYC", "NYCFC",
+            "http://www.espnfc.com/club/new-york-city-fc/17606/index"
         ),
         Team(
-            "New Orleans Pelicans", "NOP", "NOLAPelicans",
-            "http://espn.go.com/nba/team/_/name/no/new-orleans-hornets"
+            "New York Red Bulls", "new-york-red-bulls", "NY", "rbny",
+            "http://www.espnfc.com/club/new-york-red-bulls/190/index"
         ),
         Team(
-            "San Antonio Spurs", "SAS", "NBASpurs",
-            "http://espn.go.com/nba/team/_/name/sa/san-antonio-spurs"
-        ),
-    ]),
-    Division("Northwest", [
-        Team(
-            "Denver Nuggets", "DEN", "denvernuggets",
-            "http://espn.go.com/nba/team/_/name/den/denver-nuggets"
+            "Orlando City SC", "orlando-city-sc", "ORL", "OCLions",
+            "http://www.espnfc.com/club/orlando-city-sc/12011/index"
         ),
         Team(
-            "Minnesota Timberwolves", "MIN", "timberwolves",
-            "http://espn.go.com/nba/team/_/name/min/minnesota-timberwolves"
+            "Philadelphia Union", "philadelphia-union", "PHI", "PhillyUnion",
+            "http://www.espnfc.com/club/philadelphia-union/10739/index"
         ),
         Team(
-            "Oklahoma City Thunder", "OKC", "Thunder",
-            "http://espn.go.com/nba/team/_/name/okc/oklahoma-city-thunder"
-        ),
-        Team(
-            "Portland Trail Blazers", "POR", "ripcity",
-            "http://espn.go.com/nba/team/_/name/por/portland-trail-blazers"
-        ),
-        Team(
-            "Utah Jazz", "UTA", "UtahJazz",
-            "http://espn.go.com/nba/team/_/name/utah/utah-jazz"
+            "Toronto FC", "toronto-fc", "TOR", "TFC",
+            "http://www.espnfc.com/club/toronto-fc/7318/index"
         ),
     ]),
 ]
-
-CBS_SHORTCODE_MAP = {
-    "NYK": "NY",
-    "PHX": "PHO",
-    "NJN": "NJ",
-    "SAS": "SA",
-    "NOH": "NO",
-    "GSW": "GS",
-}
 
 
 def get_team(shortcode):
@@ -193,13 +144,9 @@ def reddit_stream():
     return redirect(target)
 
 
-NBA_URL = (
-    "http://www.nba.com/games/{year}{month}{day}/"
-    "{away.shortcode}{home.shortcode}/gameinfo.html"
-)
-CBS_URL = (
-    "http://www.cbssports.com/nba/gametracker/preview/"
-    "NBA_{year}{month}{day}_{away}@{home}"
+MLS_URL = (
+    "http://matchcenter.mlssoccer.com/matchcenter/{year}-{month}-{day}"
+    "{home.mls-code}-vs-{away.mls-code}/feed"
 )
 
 
@@ -226,7 +173,7 @@ def handle_errors(func):
             )
     return inner
 
-NBA_RECORD_RE = re.compile(r"\((?P<wins>\d+)-(?P<losses>\d+)\)")
+MLS_RECORD_RE = re.compile(r"\((?P<wins>\d+)-(?P<losses>\d+)\)")
 
 
 def find_espn_record(team):
@@ -247,33 +194,24 @@ def generate():
     except LookupError:
         return error("Please select a team.")
 
-    today = pytz.timezone("US/Mountain").fromutc(datetime.utcnow()).date()
-    nba_url = NBA_URL.format(
+    today = pytz.timezone("US/Central").fromutc(datetime.utcnow()).date()
+    mls_url = MLS_URL.format(
         year=today.year,
         month=str(today.month).zfill(2),
         day=str(today.day).zfill(2),
         away=away,
         home=home,
     )
-    cbs_away_shortcode = CBS_SHORTCODE_MAP.get(away.shortcode, away.shortcode)
-    cbs_home_shortcode = CBS_SHORTCODE_MAP.get(home.shortcode, home.shortcode)
-    cbs_url = CBS_URL.format(
-        year=today.year,
-        month=str(today.month).zfill(2),
-        day=str(today.day).zfill(2),
-        away=cbs_away_shortcode,
-        home=cbs_home_shortcode,
-    )
 
-    r = requests.get(nba_url)
+    r = requests.get(mls_url)
     if r.status_code == 404 or "Sorry, Page Not Found" in r.text:
         return error(
             "These teams don't seem to be playing each other tonight."
         )
     r.raise_for_status()
 
-    nba_page = PyQuery(r.text)
-    info = nba_page("#nbaGIStation").find(".nbaGITime").text()
+    mls_page = PyQuery(r.text)
+    info = mls_page("#mlsGIStation").find(".mlsGITime").text()
     if info is None:
         return error("It looks like you reversed the home and the away team.")
     gametime, stadium = info.split("-", 1)
@@ -285,15 +223,15 @@ def generate():
         "pst": sub_hours(gametime, 3),
     }
     stadium = stadium.strip()
-    records = nba_page("#nbaGITeamStats thead th")
+    records = mls_page("#mlsGITeamStats thead th")
     home_rec = None
     away_rec = None
     if records and len(records) == 2:
         [away_rec_el, home_rec_el] = records
-        match = NBA_RECORD_RE.search(home_rec_el.text_content())
+        match = MLS_RECORD_RE.search(home_rec_el.text_content())
         if match is not None:
             home_rec = match.groups()
-        match = NBA_RECORD_RE.search(away_rec_el.text_content())
+        match = MLS_RECORD_RE.search(away_rec_el.text_content())
         if match is not None:
             away_rec = match.groups()
 
@@ -302,15 +240,8 @@ def generate():
     if away_rec is None:
         away_rec = find_espn_record(away)
 
-    r = requests.get(cbs_url, allow_redirects=False)
+    r = requests.get(mls_url, allow_redirects=False)
     r.raise_for_status()
-
-    cbs_page = PyQuery(r.text)
-    tvs = []
-    for loc in ["National", "Away", "Home"]:
-        tv = cbs_page("td b:contains('{}:')".format(loc)).parent()
-        if tv:
-            tvs.append(tv[0].text_content())
 
     return jsonify(
         title=render_template(
@@ -321,7 +252,7 @@ def generate():
         body=render_template(
             "gamethread.txt",
             away=away, home=home, tv=", ".join(tvs),
-            gametimes=gametimes, stadium=stadium, nba_url=nba_url,
+            gametimes=gametimes, stadium=stadium, mls_url=mls_url,
             host=request.host,
         ),
     )
